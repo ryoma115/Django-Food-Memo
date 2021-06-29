@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>食べメモ</title>
+</head>
+<body>
+  
+  <div class='header'>
+    <h1>食べメモ</h1>
+    <p>食べたご飯屋を登録しよう</p>
+  </div>
+  
+  <form action="{% url 'upload' %}">
+    <button>投稿</button>
+  </form>
+  
+  {% block list %}
+    
+  {% endblock list %}
+    
+
+  {% block upload %}
+    
+  {% endblock upload %}
+    
+
+
+  
+
+    
+  
+</body>
+</html>
