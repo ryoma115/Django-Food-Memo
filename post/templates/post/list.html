@@ -1,23 +1,25 @@
 {% extends 'post/base.html' %}
 
-
 {% block list %}
-
-{% for item in obj %}
-  <div class="post">
-    <div class="post-img">
-      <img src="{{ item.photo1.url }}" width="80" height="80"/></td>     
-    </div>
-    <div class="post-description">
-      {{ item.description }}
-    </div>
-    <div class='post-time'>
-      {{ item.posted_at }}
-    </div>
-
-  </div>
+<div class="posts">
+  {% for item in obj %}
+    <div class="post">
+      <div class="post-title">
+        {{ item.where }}
+      </div>
+      <div class="post-img">
+        <img src="{{ item.photo1.url }}" width="80" height="80"/></td>     
+      </div>
+      <div class="post-description">
+        {{ item.description }}
+      </div>
+      <div class='post-time'>
+        {{ item.posted_at | date:"Y年m月d日 " }}
+      </div>
   
-  {% endfor %}
+    </div>
+    {% endfor %}
+</div>
   
 {% endblock list %}
   

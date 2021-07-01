@@ -1,3 +1,5 @@
+from django.db.models import query
+from django.db.models.query import QuerySet
 from django.shortcuts import render,redirect
 from .forms import DocumentForm
 from .models import Post
@@ -6,6 +8,13 @@ from .models import Post
 def home(request):
     obj = Post.objects.all()
     return render(request, 'post/list.html', {'obj': obj})
+
+    # def get_queryset(self):
+    #     queryset = Post.objects.all()
+    #     if 'query' in self.request.GET:
+    #         qs = self.requset.GET['query']
+    #         queryset = QuerySet.filter(name__contains=qs)
+    #         return queryset
 
 def upload(request):
     if request.method == 'POST':
