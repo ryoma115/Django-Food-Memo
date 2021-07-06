@@ -5,15 +5,14 @@ body {
 
 .wrap {
   width: 100%;
-  background: linear-gradient( #75bcfaf9,  #f4e6c6);
+  background: linear-gradient( #80bef5f9,  #f4e6c6);
 }
 
 .header {
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 20px 0 0 0;
   color: white;
   text-align: center;
-  
 }
 
 .header h1 {
@@ -71,6 +70,14 @@ body {
  #serch-btn:hover {
    background: #fffdf8;
    color: #7fbfff;
+ }
+
+ .match-count {
+   margin: 0;
+ }
+
+ .footer {
+   padding-bottom: 100px;
  }
 
 

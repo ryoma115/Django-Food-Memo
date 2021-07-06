@@ -1,10 +1,123 @@
-{% extends 'post/base.html' %}
-
+{% extends 'post/base.html' %} 
 {% block upload %}
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
+
+
+{% csrf_token %}
+<form method="post" enctype="multipart/form-data" autocomplete="off">
+  <input
+    type="hidden"
+    name="csrfmiddlewaretoken"
+    value="Oq1kmUycgC07ghas2poiGcAidt3ahnO6FCc5ly4drrhIFEW3DIJhcWEEat6NBY4O"
+  />
+  <div class="input-text">
+    <p>
+      <label class="ef" for="id_store_name">店名:</label>
+      <input
+        type="text"
+        name="store_name"
+        maxlength="100"
+        required=""
+        id="id_store_name"
+        placeholder="ご飯屋を入力"
+      />
+    </p>
+  </div>
+  <div class="input-text">
+    <p>
+      <label class="ef" for="id_food_category">カテゴリ:</label>
+      <input
+        type="text"
+        name="food_category"
+        maxlength="200"
+        required=""
+        id="id_food_category"
+        placeholder="例:ラーメン..."
+      />
+    </p>
+  </div>
+  <div class="input-text">
+    <p>
+      <label class="ef" for="where">場所:</label>
+      <input
+        type="text"
+        name="where"
+        maxlength="100"
+        class="form-control"
+        id="where"
+        required=""
+      />
+    </p>
+  </div>
+  <p>
+    <label for="id_photo1">写真:</label>
+    <label class="file-select"
+      ><input
+        type="file"
+        name="photo1"
+        accept="image/*"
+        id="id_photo1"
+      />写真を選択</label
+    >
+  </p>
+  <p>
+    <label for="id_photo2">写真:</label>
+    <label class="file-select"
+      ><input
+        type="file"
+        name="photo2"
+        accept="image/*"
+        id="id_photo2"
+      />写真を選択</label
+    >
+  </p>
+  <p>
+    <label for="id_photo3">写真:</label>
+    <label class="file-select"
+      ><input
+        type="file"
+        name="photo3"
+        accept="image/*"
+        id="id_photo3"
+      />写真を選択</label
+    >
+  </p>
+  <p>
+    <label for="id_photo4">写真:</label>
+    <label class="file-select"
+      ><input
+        type="file"
+        name="photo4"
+        accept="image/*"
+        id="id_photo4"
+      />写真を選択</label
+    >
+  </p>
+  <p>
+    <label for="id_photo5">写真:</label>
+    <label class="file-select"
+      ><input
+        type="file"
+        name="photo5"
+        accept="image/*"
+        id="id_photo5"
+      />写真を選択</label
+    >
+  </p>
+  <div class="upload-text">
+    <p>
+      <label class="ef" for="id_description">説明・感想:</label>
+      <textarea
+        name="description"
+        cols="40"
+        rows="5"
+        required=""
+        id="id_description"
+      ></textarea>
+    </p>
+  </div>
+  <div class="upload-btn">
+    <button type="submit">Upload</button>
+  </div>
+</form>
+
 {% endblock upload %}
-    

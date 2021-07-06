@@ -1,50 +1,35 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type='text/css' href="{% static "css/base.css" %}">
-  <link rel="stylesheet" type='text/css' href="{% static "css/list.css" %}">
-  <title>飯屋辞書</title>
-</head>
-<body>
-  <div class="wrap">
-    <div class='header'>
-      <h1>飯屋辞書</h1>
-    </div>
-    <div class="main">
-      <div class="main-messeges">
-        <p class="main-messege">食べたご飯屋を登録しよう</p>
-        <p class="main-messege">ご飯を共有してみよう！</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type='text/css' href="{% static "css/base.css" %}">
+    <link rel="stylesheet" type='text/css' href="{% static "css/list.css" %}">
+    <link rel="stylesheet" type='text/css' href="{% static "css/upload.css" %}">
+    <title>飯屋辞書</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <h1>飯屋辞書</h1>
       </div>
+      <div class="main">
+        <div class="main-messeges">
+          <p class="main-messege">食べたご飯屋を登録しよう</p>
+          <p class="main-messege">ご飯を共有してみよう！</p>
+        </div>
 
-      <div class='function'>
-        <div class="function-post">
-          <form action="{% url 'upload' %}">
-            <button>投稿</button>
-          </form>
-        </div>
-        <div class="function-serch">
-          <form id='serch-form' method="GET" action="{% url 'home' %}">
-            <input id='serch-box' type="text" name="query" placeholder="検索...　　　　例：店名">
-            <input id='serch-btn' type="submit" value="検索">
-          </form>
-        </div>
+        {% block list %}
+        {% endblock list %} 
+
+        {% block upload %} 
+        {% endblock upload %}
       </div>
-      
-      {% block list %}
-        
-      {% endblock list %}
-        
-    
-      {% block upload %}
-        
-      {% endblock upload %}
+      <div class="footer">
+        <p class="auther-name">created by Ryoma</p>
+      </div>
     </div>
-  </div>
-
-</body>
+  </body>
 </html>

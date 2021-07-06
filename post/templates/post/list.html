@@ -1,25 +1,60 @@
-{% extends 'post/base.html' %}
-
-{% block list %}
-<div class="posts">
-  {% for item in obj %}
-    <div class="post">
-      <div class="post-title">
-        {{ item.where }}
-      </div>
-      <div class="post-img">
-        <img src="{{ item.photo1.url }}" width="80" height="80"/></td>     
-      </div>
-      <div class="post-description">
-        {{ item.description }}
-      </div>
-      <div class='post-time'>
-        {{ item.posted_at | date:"Y年m月d日 " }}
-      </div>
-  
-    </div>
-    {% endfor %}
+{% extends 'post/base.html' %} {% block list %}
+<div class="function">
+  <div class="function-post">
+    <form action="{% url 'upload' %}">
+      <button>投稿</button>
+    </form>
+  </div>
+  <div class="function-serch">
+    <form id="serch-form" method="GET" action="{% url 'home' %}">
+      <input
+        id="serch-box"
+        type="text"
+        name="query"
+        value="{{ request.GET.query }}"
+        placeholder="検索...　　　　例：店名"
+      />
+      <input id="serch-btn" type="submit" value="検索" />
+    </form>
+  </div>
 </div>
-  
+<div class="match-posts">
+  {% if query %}
+  <p class="match-count">{{ posts.count }}件合致しました</p>
+  {% endif %}
+</div>
+
+<div class="posts">
+  {% for item in posts %}
+
+  <div class="post">
+    <div class="store-info">
+      <h2 class="post-store_name">{{ item.store_name }}</h2>
+      <p class="post-where post-food_category">
+        {{ item.where}}/{{ item.food_category }}
+      </p>
+    </div>
+    <div class="post-img">
+      <img src="{{ item.photo1.url }}" width="90" height="100" />
+
+      {% if item.photo2 %}
+      <img src="{{ item.photo2.url }}" width="90" height="100" />
+      {% endif %} {% if item.photo3 %}
+      <img src="{{ item.photo3.url }}" width="90" height="100" />
+      {% endif %} {% if item.photo4 %}
+      <img src="{{ item.photo4.url }}" width="90" height="100" />
+      {% endif %} {% if item.photo5 %}
+      <img src="{{ item.photo5.url }}" width="90" height="100" />
+      {% endif %}
+    </div>
+    <div>
+      <p class="post-description">{{ item.description }}</p>
+    </div>
+    <div>
+      <p class="post-time">{{ item.posted_at | date:"Y年m月d日 " }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
 {% endblock list %}
-  
