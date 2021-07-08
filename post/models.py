@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.fields import NullBooleanField
 
 class Post(models.Model):
   # user = models.ForeignKey(User, on_delete=models.CASCADE)
