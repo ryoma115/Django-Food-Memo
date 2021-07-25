@@ -1,0 +1,14 @@
+{% extends 'post/base.html' %}
+
+
+{% block content %}
+<p>本当にログアウトしますか？</p>
+<form method='post'>
+  {% csrf_token %}
+  <div class="upload-btn" style="text-align: center;">
+    <button type="submit">ログアウト</button>
+  </div>
+</form>
+
+{% endblock content %}
+  

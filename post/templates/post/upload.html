@@ -1,5 +1,5 @@
 {% extends 'post/base.html' %} 
-{% block upload %}
+{% block content %}
 
 
 {% csrf_token %}
@@ -116,8 +116,8 @@
     </p>
   </div>
   <div class="upload-btn">
-    <button type="submit">Upload</button>
+    <button type="submit">投稿</button>
   </div>
 </form>
 
-{% endblock upload %}
+{% endblock content %}

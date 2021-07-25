@@ -1,23 +1,5 @@
-{% extends 'post/base.html' %} {% block list %}
-<div class="function">
-  <div class="function-post">
-    <form action="{% url 'upload' %}">
-      <button>投稿</button>
-    </form>
-  </div>
-  <div class="function-serch">
-    <form id="serch-form" method="GET" action="{% url 'home' %}">
-      <input
-        id="serch-box"
-        type="text"
-        name="query"
-        value="{{ request.GET.query }}"
-        placeholder="検索...　　　　例：店名"
-      />
-      <input id="serch-btn" type="submit" value="検索" />
-    </form>
-  </div>
-</div>
+{% extends 'post/base.html' %} 
+{% block content %}
 <div class="match-posts">
   {% if query %}
   <p class="match-count">{{ posts.count }}件合致しました</p>
@@ -57,4 +39,4 @@
   {% endfor %}
 </div>
 
-{% endblock list %}
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'post/base.html' %}
+
+
+{% block content %}
+<h5>ログイン</h5>  
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label for="id_login">メールアドレス:</label>
+    <input type="email" name="login" placeholder="メールアドレス" autocomplete="off" required="" id="id_login" class="login-email">
+  </div>
+
+  <div>
+    <label for="id_password">パスワード:</label>
+    <input type="password" name="password" placeholder="パスワード" autocomplete="current-password" required="" id="id_password" class="login-password">
+  </div>
+
+  <div>
+    <label for="id_remember">ログインしたままにする:</label>
+    <input type="checkbox" name="remember" id="id_remember">
+  </div>
+  <div class="upload-btn">
+    <button type="submit">ログイン</button>
+  </div>
+</form>
+{% endblock content %}

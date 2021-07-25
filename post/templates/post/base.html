@@ -8,6 +8,8 @@
     <link rel="stylesheet" type='text/css' href="{% static "css/base.css" %}">
     <link rel="stylesheet" type='text/css' href="{% static "css/list.css" %}">
     <link rel="stylesheet" type='text/css' href="{% static "css/upload.css" %}">
+    <link rel="stylesheet" type='text/css' href="{% static "css/accounts.css" %}">
+    <link rel="stylesheet" type='text/css' href="{% static "css/login.css" %}">
     <title>飯屋辞書</title>
   </head>
   <body>
@@ -20,16 +22,48 @@
           <p class="main-messege">食べたご飯屋を登録しよう</p>
           <p class="main-messege">ご飯を共有してみよう！</p>
         </div>
+        <div class="base-function">
+          <div id="nav-drawer">
+            <input id="nav-input" type="checkbox" class="nav-unshown">
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <div id="nav-content">
+              <ul>
+                
+                {% if user.is_authenticated %}
+                <li class="nav-list"><a href="{% url 'home' %}">ホーム</a></li>
+                <li class="nav-list"><a href="{% url 'upload' %}">アップロード</a></li>
+                <li class="nav-list"><a href="{% url 'profile' %}">プロフィール</a></li>
+                <li class="nav-list"><a href="{% url 'profile_edit' %}">プロフィール設定</a></li>
+                <li class="nav-list"><a href="{% url 'account_logout' %}">ログアウト</a></li>
+                {% else %}
+                <li class="nav-list"><a href="{% url 'home' %}">ホーム</a></li>
+                <li class="nav-list"><a href="{% url 'account_login' %}">ログイン</a></li>
+                <li class="nav-list"><a href="{% url 'account_signup' %}">アカウント作成</a></li>
+                {% endif %}
+                  
 
-        {% block list %}
-        {% endblock list %} 
+              </ul>
+            </div>
+          </div>
+          
+          <div class="function-serch">
+            <form id="serch-form" method="GET" action="{% url 'home' %}" style="margin: 0;">
+              <input
+                id="serch-box"
+                type="text"
+                name="query"
+                value="{{ request.GET.query }}"
+                placeholder="検索...　　　　例：店名"
+                autocomplete="off"
+              />
+              <input id="serch-btn" type="submit" value="検索" />
+            </form>
+          </div>
+        </div>
 
-        {% block upload %} 
-        {% endblock upload %}
-
-        
-        {% block profile %}
-        {% endblock profile %}
+        {% block content %}
+        {% endblock content %} 
           
       </div>
       <div class="footer">

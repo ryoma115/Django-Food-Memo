@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/n.ryoma/Desktop/food-memo/venv"
+set -gx VIRTUAL_ENV "/Users/n.ryoma/Documents/PG /Django/food-memo/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

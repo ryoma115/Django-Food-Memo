@@ -1,4 +1,4 @@
-#!/Users/n.ryoma/Desktop/food-memo/venv/bin/python3
+#!/Users/n.ryoma/Documents/PG /Django/food-memo/venv/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

@@ -39,3 +39,10 @@
   font-weight: lighter;
 }
 
+.additional-post {
+  border: none;
+  padding: 0.5rem 0.8rem;
+  background: #fffdf8;
+  color: #7fbfff;
+}
+

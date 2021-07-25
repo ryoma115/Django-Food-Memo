@@ -1,0 +1,29 @@
+{% extends 'post/base.html' %}
+
+
+{% block content %}
+<div class="card card-profile my-5 mx-auto">
+  <div class="card-body">
+    <h5 class="card-title text-center">プロフィール</h5>
+    <form method="POST">
+      {% csrf_token %}
+      <table class="profile_table mb-4">
+        <tr>
+          <th class="header">名前[姓]</th>
+          <td class="data">
+            <input type="text" class="input-edit" name="first_name" maxlength="30" required="" id="id_first_name" autocomplete="off" placeholder="新しい名前[姓]">
+          </td>
+        </tr>
+        <tr>
+          <th class="header">名前[名]</th>
+          <td class="data"><input type="text" class="input-edit" name="last_name" maxlength="30" required="" id="id_last_name" autocomplete="off" placeholder="新しい名前[名]"></td>
+        </tr>
+      </table>
+      <div class="btn-edit">
+        <button type="submit">登録する</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}
+  

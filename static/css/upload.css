@@ -47,7 +47,7 @@ input[type="file"] {
   text-align: right;
 }
 
-.upload-btn button {
+.upload-btn button  {
   padding: 10px 36px;
   margin-right: 40px;
   color: white;
@@ -56,4 +56,13 @@ input[type="file"] {
   border-radius: 2px;
   border: none;
   text-align: center;
+}
+.upload-btn a  {
+  padding: 8px 10px;
+  color: #2f55ac;
+  cursor: pointer;
+  border-radius: 2px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
 }
