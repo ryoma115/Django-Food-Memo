@@ -31,5 +31,5 @@ def upload(request):
         obj = Post.objects.all()
     return render(request, 'post/upload.html', {
         'form': form,
-        'obj': obj
+        'obj': obj,
     })
