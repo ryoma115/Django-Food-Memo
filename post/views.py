@@ -1,5 +1,6 @@
 from django.db.models import Q
 from django.shortcuts import render,redirect
+from django.views.generic import DetailView, DeleteView, UpdateView
 from .forms import DocumentForm
 from .models import Post
  
@@ -33,3 +34,13 @@ def upload(request):
         'form': form,
         'obj': obj,
     })
+
+class Detail(DetailView):
+    template_name = 'post/detail.html'
+    model = Post
+
+class Delete(DeleteView):
+    template_name = 'post/delete.html'
+    model = Post
+
+    success_url = '/'
